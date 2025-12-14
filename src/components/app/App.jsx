@@ -1,8 +1,16 @@
 import React from 'react';
 
+import {Stack, Button, Container} from '@mui/material';
+
 const App = () => {
     return (
-        <div>App</div>
+        <Container>
+            <Stack spacing={2} direction={'row'}>
+                <Button variant='text'>Text</Button>
+                <Button variant='contained'>Contained</Button>
+                <Button variant='outlined'>Outlined</Button>
+            </Stack>
+        </Container>
     );
 }
 
