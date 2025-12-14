@@ -1,8 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import {Button} from '@mui/material';
 
 const Channel = () => {
     return (
-        <div>Channel</div>
+        <Link to={'/'}>
+            <Button>Main</Button>
+        </Link>
     );
 }
 
