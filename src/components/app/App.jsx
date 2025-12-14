@@ -1,6 +1,8 @@
 import React from 'react';
+import {Routes, Route} from 'react-router-dom';
+import {Stack, Button, Container, Box} from '@mui/material';
 
-import {Stack, Button, Container} from '@mui/material';
+import {Main, Channel} from '../index';
 
 const App = () => {
     return (
@@ -10,6 +12,12 @@ const App = () => {
                 <Button variant='contained'>Contained</Button>
                 <Button variant='outlined'>Outlined</Button>
             </Stack>
+            <Box>
+                <Routes>
+                    <Route path='/' element={<Main />} />
+                    <Route path='/channel' element={<Channel />} />
+                </Routes>
+            </Box>
         </Container>
     );
 }
