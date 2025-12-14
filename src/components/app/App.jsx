@@ -2,20 +2,18 @@ import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 import {Container, Box} from '@mui/material';
 
-import {Main, Channel} from '../index';
+import {Navbar, Main, Channel, VideoDetail, Search} from '../index';
 
 const App = () => {
     return (
         <Container>
-            {/* <Stack spacing={2} direction={'row'}>
-                <Button variant='text'>Text</Button>
-                <Button variant='contained'>Contained</Button>
-                <Button variant='outlined'>Outlined</Button>
-            </Stack> */}
             <Box>
+                <Navbar />
                 <Routes>
                     <Route path='/' element={<Main />} />
-                    <Route path='/channel' element={<Channel />} />
+                    <Route path='/channel/:id' element={<Channel />} />
+                    <Route path='/video/:id' element={<VideoDetail />} />
+                    <Route path='/search/:id' element={<Search />} />
                 </Routes>
             </Box>
         </Container>
