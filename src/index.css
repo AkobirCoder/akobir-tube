@@ -9,3 +9,12 @@
     outline: none;
     width: 350px;
 }
+
+.category-btn:hover {
+    background-color: #76323f !important;
+    color: #fff !important;
+}
+
+.category-btn:hover span {
+    color: #fff !important;
+}
