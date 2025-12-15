@@ -8,8 +8,9 @@ import {
     LiveTv, 
     MusicNote, 
     OndemandVideo, 
-    School, 
+    School,
     SportsEsports, 
+    SportsGymnastics, 
     TheaterComedy 
 } from "@mui/icons-material"; 
 
@@ -19,7 +20,7 @@ export const category = [
     {name: 'Live', icon: <LiveTv />},
     {name: 'Gaming', icon: <SportsEsports />},
     {name: 'Education', icon: <School />},
-    {name: 'Sport', icon: <FitnessCenter />},
+    {name: 'Sport', icon: <SportsGymnastics />},
     {name: 'Comedy', icon: <TheaterComedy />},
     {name: 'Podcast', icon: <GraphicEq />},
     {name: 'Fashion', icon: <Checkroom />},
