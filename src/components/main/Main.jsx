@@ -1,12 +1,18 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {Button} from '@mui/material';
+import {Stack, Container, Box, Typography} from '@mui/material';
 
 const Main = () => {
     return (
-        <Link to={'/channel'}>
-            <Button>Channel</Button>
-        </Link>
+        <Stack>
+            Category
+            <Box p={2} sx={{height: '90vh'}}>
+                <Container maxWidth={'90%'}>
+                    <Typography variant={'h4'} fontWeight={'bold'} mb={2}>
+
+                    </Typography>
+                </Container>
+            </Box>
+        </Stack>
     );
 }
 
