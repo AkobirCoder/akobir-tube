@@ -4,7 +4,7 @@ import { Stack, Box } from '@mui/material';
 
 import logo from '../../logo.png';
 import {colors} from '../../constants/colors';
-import {SearchBar} from '../index';
+import {SearchBar, Profile} from '../index';
 
 const Navbar = () => {
     return (
@@ -14,6 +14,7 @@ const Navbar = () => {
             justifyContent={'space-between'} 
             p={2}
             sx={{
+                height: '10vh',
                 position: 'sticky', 
                 top: 0, 
                 zIndex: 999, 
@@ -25,6 +26,7 @@ const Navbar = () => {
             </Link>
             <SearchBar />
             <Box />
+            <Profile />
         </Stack>
     );
 }
