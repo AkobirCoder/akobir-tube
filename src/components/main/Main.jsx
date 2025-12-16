@@ -7,14 +7,17 @@ import {Category} from '../index';
 const Main = () => {
     const [selectedCategory, setSelectedCategory] = useState('New');
 
-    const selectedCategoryHandler = (event) => {
-        console.log(event.currentTarget.value);
-        setSelectedCategory(event.currentTarget.value);
+    // const selectedCategoryHandler = (event) => {
+    //     setSelectedCategory(event.currentTarget.value);
+    // }
+
+    const selectedCategoryHandler = (category) => {
+        setSelectedCategory(category);
     }
 
     return (
         <Stack>
-            <Category selectedCategoryHandler={selectedCategoryHandler} />
+            <Category selectedCategoryHandler={selectedCategoryHandler} selectedCategory={selectedCategory} />
             <Box p={2} sx={{height: '90vh'}}>
                 <Container maxWidth={'90%'}>
                     <Typography variant={'h4'} fontWeight={'bold'} mb={2}>
