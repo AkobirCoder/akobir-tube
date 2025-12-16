@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {Stack, Container, Box, Typography} from '@mui/material';
 
 import {colors} from '../../constants/colors';
-import {Category} from '../index';
+import {Category, Videos} from '../index';
 
 const Main = () => {
     const [selectedCategory, setSelectedCategory] = useState('New');
@@ -15,6 +15,8 @@ const Main = () => {
         setSelectedCategory(category);
     }
 
+    console.log(process.env.REACT_APP_PUBLIC_KEY);
+
     return (
         <Stack>
             <Category selectedCategoryHandler={selectedCategoryHandler} selectedCategory={selectedCategory} />
@@ -25,7 +27,7 @@ const Main = () => {
                             videos
                         </span>
                     </Typography>
-                    Videos
+                    <Videos />
                 </Container>
             </Box>
         </Stack>
