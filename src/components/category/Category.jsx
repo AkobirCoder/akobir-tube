@@ -4,7 +4,7 @@ import { Stack } from '@mui/material';
 import {category} from '../../constants/category';
 import {colors} from '../../constants/colors';
 
-const Category = ({selectedCategoryHandler}) => {
+const Category = ({selectedCategoryHandler, selectedCategory}) => {
     return (
         <Stack direction={'row'} sx={{overflowX: 'scroll'}}>
             {
@@ -15,12 +15,21 @@ const Category = ({selectedCategoryHandler}) => {
                             className='category-btn'
                             style={{
                                 borderRadius: 0,
-
+                                background: item.name === selectedCategory && colors.secondary,
+                                color: item.name === selectedCategory && '#fff'
                             }}
-                            value={item.name}
-                            onClick={selectedCategoryHandler}
+                            // value={item.name}
+                            // onClick={selectedCategoryHandler}
+                            onClick={() => selectedCategoryHandler(item.name)}
                         >
-                            <span style={{color: colors.secondary, marginRight: '15px'}}>
+                            <span 
+                                style={{
+                                    color: item.name === selectedCategory
+                                        ? '#fff'
+                                        : colors.secondary,  
+                                    marginRight: '15px',
+                                }}
+                            >
                                 {item.icon}
                             </span>
                             <span style={{opacity: 1}}>
