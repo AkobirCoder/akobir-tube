@@ -7,13 +7,9 @@ import {Category} from '../index';
 const Main = () => {
     const [selectedCategory, setSelectedCategory] = useState('New');
 
-    // const onSelectCategory = (event) => {
-    //     console.log(event.currentTarget.value);
-    //     setSelectedCategory(event.currentTarget.value);
-    // }
-
-    const onSelectCategory = (value) => {
-        setSelectedCategory(value);
+    const onSelectCategory = (event) => {
+        console.log(event.currentTarget.value);
+        setSelectedCategory(event.currentTarget.value);
     }
 
     return (
