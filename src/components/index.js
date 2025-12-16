@@ -4,6 +4,7 @@ export {default as Navbar} from './navbar/Navbar';
 export {default as SearchBar} from './search-bar/Search-bar';
 export {default as Profile} from './profile/Profile';
 export {default as Category} from './category/Category';
+export {default as Videos} from './videos/Videos';
 export {default as VideoDetail} from './video-detail/Video-Detail';
 export {default as Channel} from './channel/Channel';
 export {default as Search} from './search/Search';
