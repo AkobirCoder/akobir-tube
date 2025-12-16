@@ -18,8 +18,7 @@ const Category = ({onSelectCategory}) => {
 
                             }}
                             value={item.name}
-                            // onClick={onSelectCategory}
-                            onClick={() => onSelectCategory(item.name)}
+                            onClick={onSelectCategory}
                         >
                             <span style={{color: colors.secondary, marginRight: '15px'}}>
                                 {item.icon}
