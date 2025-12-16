@@ -26,6 +26,6 @@ export const category = [
     {name: 'Fashion', icon: <Checkroom />},
     {name: 'Crypto', icon: <DeveloperMode />},
     {name: 'Gym', icon: <FitnessCenter />},
-    {Name: 'Beauty', icon: <FaceRetouchingNatural />},
+    {name: 'Beauty', icon: <FaceRetouchingNatural />},
     {name: 'Music', icon: <MusicNote />},
 ];
