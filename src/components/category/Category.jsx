@@ -35,7 +35,7 @@ const Category = ({selectedCategoryHandler, selectedCategory}) => {
                             <span style={{opacity: 1}}>
                                 {item.name}
                             </span>
-                    </button>
+                        </button>
                     );
                 })
             }
