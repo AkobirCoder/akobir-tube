@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Stack, Container, Box, Typography} from '@mui/material';
 
 import {colors} from '../../constants/colors';
 import {Category, Videos} from '../index';
+import {ApiService} from '../../service/api.service';
 
 const Main = () => {
     const [selectedCategory, setSelectedCategory] = useState('New');
@@ -15,7 +16,9 @@ const Main = () => {
         setSelectedCategory(category);
     }
 
-    console.log(process.env.REACT_APP_PUBLIC_KEY);
+    useEffect(() => {
+        ApiService.fetching('search').then(data => console.log(data));
+    }, []);
 
     return (
         <Stack>
