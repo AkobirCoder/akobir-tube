@@ -7,6 +7,7 @@ import {ApiService} from '../../service/api.service';
 
 const Main = () => {
     const [selectedCategory, setSelectedCategory] = useState('New');
+    const [videos, setVideos] = useState([]);
 
     // const selectedCategoryHandler = (event) => {
     //     setSelectedCategory(event.currentTarget.value);
@@ -17,7 +18,7 @@ const Main = () => {
     }
 
     useEffect(() => {
-        ApiService.fetching('search').then(data => console.log(data));
+        ApiService.fetching('search').then(data => setVideos(data.items));
     }, []);
 
     return (
@@ -31,6 +32,7 @@ const Main = () => {
                         </span>
                     </Typography>
                     <Videos />
+                    {videos.map((item) => item.kind)}
                 </Container>
             </Box>
         </Stack>
