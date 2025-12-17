@@ -17,9 +17,23 @@ const Main = () => {
         setSelectedCategory(category);
     }
 
+    // useEffect(() => {
+    //     ApiService.fetching('search').then(data => setVideos(data.items));
+    // }, []);
+
     useEffect(() => {
-        ApiService.fetching('search').then(data => setVideos(data.items));
-    }, []);
+        const getData = async () => {
+            try {
+                const data = await ApiService.fetching('search');
+
+                setVideos(data.items);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        getData(getData);
+    }, []); 
 
     return (
         <Stack>
