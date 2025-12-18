@@ -24,7 +24,7 @@ const Main = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const data = await ApiService.fetching('search');
+                const data = await ApiService.fetching(`search?part=snippet&q=${selectedCategory}`);
 
                 setVideos(data.items);
             } catch (error) {
@@ -45,8 +45,7 @@ const Main = () => {
                             videos
                         </span>
                     </Typography>
-                    <Videos />
-                    {videos.map((item) => item.kind)}
+                    <Videos videos={videos} />
                 </Container>
             </Box>
         </Stack>
