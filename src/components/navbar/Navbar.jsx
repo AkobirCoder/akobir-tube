@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Stack, Box } from '@mui/material';
+import { Stack } from '@mui/material';
 
 import logo from '../../logo.png';
 import {colors} from '../../constants/colors';
