@@ -33,7 +33,7 @@ const Main = () => {
         }
 
         getData(getData);
-    }, [selectedCategory]); 
+    }, []); 
 
     return (
         <Stack>
