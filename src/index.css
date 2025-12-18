@@ -1,3 +1,5 @@
+/* Common styles: */
+
 * {
     margin: 0;
     padding: 0;
@@ -48,4 +50,13 @@
 
 .category-btn:hover span {
     color: #fff !important;
+}
+
+
+/* Media queries: */
+
+@media screen and (max-width: 600px) {
+    .search-bar {
+        width: 200px;
+    }
 }
