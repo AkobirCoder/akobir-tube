@@ -12,7 +12,8 @@ const SearchBar = () => {
                 border: `1px solid ${colors.secondary}`,
                 pl: 2,
                 boxShadow: 'none',
-                borderRadius: 0
+                borderRadius: 0,
+                mr: 5
             }}
         >
             <input type="text" placeholder='Search...' className='search-bar' />
