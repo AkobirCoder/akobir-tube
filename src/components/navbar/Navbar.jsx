@@ -25,7 +25,7 @@ const Navbar = () => {
                 <img src={logo} alt="This is Logo" width={200} />
             </Link>
             <SearchBar />
-            <Box />
+            {/* <Box /> */}
             <Profile />
         </Stack>
     );
