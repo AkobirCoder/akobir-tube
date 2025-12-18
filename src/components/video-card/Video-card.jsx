@@ -6,8 +6,6 @@ import moment from 'moment/moment';
 import {colors} from '../../constants/colors';
 
 const VideoCard = ({video}) => {
-    // console.log(video);
-
     return (
         <Card 
             sx={{
