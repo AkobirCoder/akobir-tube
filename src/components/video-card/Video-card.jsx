@@ -6,12 +6,12 @@ import moment from 'moment/moment';
 import {colors} from '../../constants/colors';
 
 const VideoCard = ({video}) => {
-    console.log(video);
+    // console.log(video);
 
     return (
         <Card 
             sx={{
-                width: '320px',
+                width: {xs: '400px', sm: '350px', md: '320px'},
                 boxShadow: 'none',
                 borderRadius: 0
             }}
@@ -20,7 +20,7 @@ const VideoCard = ({video}) => {
                 image={video?.snippet?.thumbnails?.high?.url} 
                 alt={video?.snippet?.title}
                 sx={{
-                    width: '360px',
+                    width: {xs: '400px', sm: '350px', md: '320px'},
                     height: '180px'
                 }} 
             />
