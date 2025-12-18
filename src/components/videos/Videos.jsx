@@ -23,7 +23,7 @@ const Videos = ({videos}) => {
                                 item.id.videoId && <VideoCard video={item} />
                             }
                             {
-                                item.id.videoId && <ChannelCard />
+                                item.id.channelId && <ChannelCard video={item} />
                             }
                         </Box>
                     );
