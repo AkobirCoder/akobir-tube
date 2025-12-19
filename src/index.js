@@ -8,7 +8,7 @@ import '@fontsource/roboto/700.css';
 
 import { App } from './components';
 
-import './index.css';
+import './index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
