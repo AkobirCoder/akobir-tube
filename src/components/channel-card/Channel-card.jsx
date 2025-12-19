@@ -11,7 +11,7 @@ const ChannelCard = ({video}) => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                width: {xs: '356px', md: '320px'},
+                width: {xs: '356px', md: '100%'},
                 height: '326px',
                 margin: 'auto'
             }}
