@@ -1,10 +1,16 @@
 import React from 'react';
 import { Box, Grid } from '@mui/material';
 
-import {VideoCard, ChannelCard} from '../index'
+import {VideoCard, ChannelCard, Loader} from '../index';
 
 const Videos = ({videos}) => {
     console.log(videos);
+
+    if (!videos.length) {
+        return (
+            <Loader />
+        );
+    }
 
     return (
         <Box sx={{flexGrow: 1}}>
@@ -13,9 +19,9 @@ const Videos = ({videos}) => {
                 alignItems={'center'}
             >
                 {
-                    videos.map((item) => {
+                    videos.map((item, index) => {
                         return (
-                            <Grid size={{xs: 12, sm: 6, md: 4, lg: 3}} key={item.id.videoId}>
+                            <Grid size={{xs: 12, sm: 6, md: 4, lg: 3}} key={index}>
                                 {
                                     item.id.videoId && <VideoCard video={item} />
                                 }
