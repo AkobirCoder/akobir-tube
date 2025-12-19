@@ -5,6 +5,7 @@ export {default as SearchBar} from './search-bar/Search-bar';
 export {default as Profile} from './profile/Profile';
 export {default as Category} from './category/Category';
 export {default as Videos} from './videos/Videos';
+export {default as Loader} from './loader/Loader';
 export {default as VideoCard} from './video-card/Video-card';
 export {default as ChannelCard} from './channel-card/Channel-card';
 export {default as VideoDetail} from './video-detail/Video-Detail';
