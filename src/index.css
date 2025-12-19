@@ -56,7 +56,11 @@
 /* Media queries: */
 
 @media screen and (max-width: 600px) {
+    .logo {
+        width: 100px;
+    }
+
     .search-bar {
-        width: 200px;
+        width: 100px;
     }
 }
