@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Stack } from '@mui/material';
+import { Stack, Box } from '@mui/material';
 
 import logo from '../../logo.png';
 import {colors} from '../../constants/colors';
@@ -22,10 +22,10 @@ const Navbar = () => {
             }}
         >
             <Link to={'/'}>
-                <img src={logo} alt="This is Logo" width={200} />
+                <img src={logo} className='logo' alt="This is Logo" width={200} />
             </Link>
             <SearchBar />
-            {/* <Box /> */}
+            <Box />
             <Profile />
         </Stack>
     );
