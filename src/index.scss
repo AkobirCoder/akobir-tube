@@ -52,6 +52,11 @@
     color: #fff !important;
 }
 
+.react-player {
+    height: 77vh !important;
+    width: 100% !important;
+}
+
 
 /* Media queries: */
 
@@ -62,5 +67,9 @@
 
     .search-bar {
         width: 100px;
+    }
+
+    .react-player {
+        height: 45vh !important;
     }
 }
