@@ -8,7 +8,7 @@ const Loader = () => {
                 direction={'row'} 
                 justifyContent={'center'}
                 alignItems={'center'}
-                height={'50vh'}
+                height={'80vh'}
             >
                 <CircularProgress />
             </Stack>
