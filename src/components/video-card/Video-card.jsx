@@ -15,7 +15,7 @@ const VideoCard = ({video}) => {
                 borderRadius: 0
             }}
         >
-            <Link to={`/video/${video?.id?.videoId}`  }>
+            <Link to={`/video/${video?.id?.videoId}`}>
                 <CardMedia 
                     image={video?.snippet?.thumbnails?.high?.url} 
                     alt={video?.snippet?.title}
@@ -32,7 +32,10 @@ const VideoCard = ({video}) => {
                     position: 'relative'
                 }}
             >
-                <Link style={{textDecoration: 'none', color: 'black'}}>
+                <Link 
+                    to={`/video/${video?.id?.videoId}`} 
+                    style={{textDecoration: 'none', color: 'black'}}
+                >
                     <Typography my={'5px'} sx={{opacity: '0.4'}}>
                         {moment(video?.snippet?.publishedAt).fromNow()}
                     </Typography>
