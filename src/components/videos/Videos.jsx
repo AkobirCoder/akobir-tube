@@ -4,8 +4,6 @@ import { Box, Grid } from '@mui/material';
 import {VideoCard, ChannelCard, Loader} from '../index';
 
 const Videos = ({videos}) => {
-    console.log(videos);
-
     if (!videos.length) {
         return (
             <Loader />
@@ -13,7 +11,7 @@ const Videos = ({videos}) => {
     }
 
     return (
-        <Box sx={{flexGrow: 1}}>
+        <Box sx={{flexGrow: 1, width: '100%'}}>
             <Grid container spacing={2}
                 justifyContent={'center'}
                 alignItems={'center'}
