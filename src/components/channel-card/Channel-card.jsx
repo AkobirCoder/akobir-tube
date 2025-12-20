@@ -17,7 +17,10 @@ const ChannelCard = ({video}) => {
                 margin: 'auto'
             }}
         >
-            <Link to={`/channel/${video?.snippet?.channelId}`}>
+            <Link 
+                style={{textDecoration: 'none', color: 'black'}} 
+                to={`/channel/${video?.snippet?.channelId}`}
+            >
                 <CardContent 
                     sx={{
                         display: 'flex',
