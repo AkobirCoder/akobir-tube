@@ -30,7 +30,7 @@ const VideoCard = ({video}) => {
                     position: 'relative'
                 }}
             >
-                <Link>
+                <Link style={{textDecoration: 'none', color: 'black'}}>
                     <Typography my={'5px'} sx={{opacity: '0.4'}}>
                         {moment(video?.snippet?.publishedAt).fromNow()}
                     </Typography>
