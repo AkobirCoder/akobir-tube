@@ -12,8 +12,6 @@ const SearchBar = () => {
     const submitHandler = (event) => {
         event.preventDefault();
 
-        console.log(value);
-
         if (value) {
             navigate(`/search/${value}`);
         }
