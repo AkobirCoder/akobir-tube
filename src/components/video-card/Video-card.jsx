@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import {Link} from 'react-router-dom';
 import {Avatar, Card, CardContent, CardMedia, Stack, Typography} from '@mui/material';
 import { CheckCircle } from '@mui/icons-material';
 import moment from 'moment/moment';
@@ -29,7 +30,7 @@ const VideoCard = ({video}) => {
                     position: 'relative'
                 }}
             >
-                <Fragment>
+                <Link>
                     <Typography my={'5px'} sx={{opacity: '0.4'}}>
                         {moment(video?.snippet?.publishedAt).fromNow()}
                     </Typography>
@@ -39,8 +40,8 @@ const VideoCard = ({video}) => {
                     <Typography variant='subtitle2' sx={{opacity: '0.6'}}>
                         {video?.snippet?.description.slice(0, 70)}
                     </Typography>
-                </Fragment>
-                <Fragment>
+                </Link>
+                <Link to={`/channel/${video?.snippet?.channelId}`}>
                     <Stack 
                         direction={'row'} 
                         position={'absolute'}
@@ -54,7 +55,7 @@ const VideoCard = ({video}) => {
                             <CheckCircle sx={{fontSize: '12px', color: 'gray', ml: '5px'}} />
                         </Typography>
                     </Stack>
-                </Fragment>
+                </Link>
             </CardContent>
         </Card>
     );
