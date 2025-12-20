@@ -15,14 +15,16 @@ const VideoCard = ({video}) => {
                 borderRadius: 0
             }}
         >
-            <CardMedia 
-                image={video?.snippet?.thumbnails?.high?.url} 
-                alt={video?.snippet?.title}
-                sx={{
-                    width: {xs: 'auto', sm: '350px', md: '100%'},
-                    height: '180px'
-                }} 
-            />
+            <Link to={`/video/${video?.id?.videoId}`  }>
+                <CardMedia 
+                    image={video?.snippet?.thumbnails?.high?.url} 
+                    alt={video?.snippet?.title}
+                    sx={{
+                        width: {xs: 'auto', sm: '350px', md: '100%'},
+                        height: '180px'
+                    }} 
+                />
+            </Link>
             <CardContent 
                 sx={{
                     background: colors.primary,
