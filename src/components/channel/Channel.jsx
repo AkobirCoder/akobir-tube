@@ -4,7 +4,6 @@ import {Button} from '@mui/material';
 
 const Channel = () => {
     const params = useParams();
-    console.log(params);
 
     return (
         <Link to={'/'}>
