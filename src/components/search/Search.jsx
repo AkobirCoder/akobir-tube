@@ -4,7 +4,7 @@ import {Box, Container, Typography} from '@mui/material';
 
 import {ApiService} from '../../service/api.service';
 import {colors} from '../../constants/colors';
-import {Videos} from '../index';
+import {Loader, Videos} from '../index';
 
 const Search = () => {
     const [videos, setVideos] = useState([]);
@@ -23,6 +23,12 @@ const Search = () => {
 
         getData();
     }, [id]);
+
+    if (!videos.length) {
+        return (
+            <Loader />
+        );
+    }
 
     return (
         <Box p={2} sx={{height: '90vh'}}>
