@@ -1,12 +1,29 @@
 import React from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Stack } from '@mui/material';
 
 import {VideoCard, ChannelCard, Loader} from '../index';
 
-const Videos = ({videos}) => {
-    if (!videos.length) {
+const Videos = ({videos, direction}) => {
+    if (!videos.length || '') {
         return (
             <Loader />
+        );
+    }
+
+    if (direction === 'column') {
+        return (
+            <Stack spacing={2}>
+                {
+                    videos.map((item, index) => {
+                        return (
+                            <Box key={index}>
+                                {item.id.videoId && <VideoCard video={item} />}
+                                {item.id.channelId && <ChannelCard video={item} />}
+                            </Box>
+                        );
+                    })
+                }
+            </Stack>
         );
     }
 
