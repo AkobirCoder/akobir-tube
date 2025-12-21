@@ -24,7 +24,7 @@ const Search = () => {
         getData();
     }, [id]);
 
-    if (!videos.length) {
+    if (!videos.length || '') {
         return (
             <Loader />
         );
