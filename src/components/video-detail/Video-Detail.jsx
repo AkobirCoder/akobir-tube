@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
-import {Avatar, Box, Chip, Stack, Typography} from '@mui/material';
+import {Avatar, Box, Chip, Stack, Typography, Collapse} from '@mui/material';
 import { CheckCircle, FavoriteOutlined, MarkChatRead, Tag, Visibility } from '@mui/icons-material';
 import ReactPlayer from 'react-player';
 import renderHTML from 'react-render-html';
@@ -79,25 +79,26 @@ const VideoDetail = () => {
                     <Typography variant='h5' fontWeight={'bold'} p={2}>
                         {videoDetail?.snippet?.title}
                     </Typography>
-                    <Typography variant='subtitle2' p={2} sx={{opacity: '0.7'}}>
-                        {renderHTML(showMoreDiscription ? description : shortDescription)}
-                        {
-                            description.length > 200 && (
-                                <span
-                                    style={{
-                                        cursor: 'pointer',
-                                        color: colors.secondary,
-                                        fontWeight: 'bold',
-                                        paddingLeft: '5px'
-                                    }}
-                                    onClick={descriptionHandler}
-                                >
-                                    {showMoreDiscription ? 'Less' : 'More'}
-                                </span>
-                            )
-                        }
-                    </Typography>
-                    
+                    <Collapse in={shortDescription} collapsedSize={80}>
+                        <Typography variant='subtitle2' p={2} sx={{opacity: '0.7'}}>
+                            {renderHTML(showMoreDiscription ? description : shortDescription)}
+                            {
+                                description.length > 200 && (
+                                    <span
+                                        style={{
+                                            cursor: 'pointer',
+                                            color: colors.secondary,
+                                            fontWeight: 'bold',
+                                            paddingLeft: '5px'
+                                        }}
+                                        onClick={descriptionHandler}
+                                    >
+                                        {showMoreDiscription ? 'Less' : 'More'}
+                                    </span>
+                                )
+                            }
+                        </Typography>
+                    </Collapse>
                     <Stack
                         direction={'row'}
                         gap={'20px'}
