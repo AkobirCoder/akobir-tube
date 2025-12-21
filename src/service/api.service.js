@@ -8,7 +8,7 @@ const options = {
         maxResults: '50'
     },
     headers: {
-        'x-rapidapi-key': process.env.REACT_APP_PUBLIC_KEY_THREE,
+        'x-rapidapi-key': process.env.REACT_APP_PUBLIC_KEY_FIVE,
         'x-rapidapi-host': 'youtube-v31.p.rapidapi.com'
     }
 };
