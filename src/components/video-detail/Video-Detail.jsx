@@ -6,18 +6,28 @@ import ReactPlayer from 'react-player';
 import renderHTML from 'react-render-html';
 
 import {ApiService} from '../../service/api.service';
-import {Loader} from '../index';
+import {Loader, Videos} from '../index';
+import {colors} from '../../constants/colors';
 
 const VideoDetail = () => {
     const [videoDetail, setVideoDetail] = useState([]);
+    const [relatedVideo, setRelatedVideo] = useState([]);
+    const [showMoreDiscription, setShowMoreDiscription] = useState(false);
     const {id} = useParams();
+
+    const description = videoDetail?.snippet?.description || '';
+    const shortDescription = `${description.slice(0, 200)}...`;
 
     useEffect(() => {
         const getData = async () => {
             try {
                 const data = await ApiService.fetching(`videos?part=snippet,statistics&id=${id}`);
-                
+
                 setVideoDetail(data.items[0]);
+
+                const relatedData = await ApiService.fetching(`search?part=snippet&relatedToVideoId=${id}&type=video`);
+
+                setRelatedVideo(relatedData.items);
             } catch (error) {
                 console.log(error);
             }
@@ -32,10 +42,11 @@ const VideoDetail = () => {
         );
     }
 
-    // const {
-    //     snippet: {title, channelId, channelTitle, description, tags, thumbnails},
-    //     statistics: {viewCount, likeCount, commentCount},
-    // } = videoDetail;
+    const descriptionHandler = () => {
+        setShowMoreDiscription((prevState) => {
+            return !prevState;
+        });
+    }
 
     return (
         <Box minHeight={'90vh'} mb={10}>
@@ -45,7 +56,7 @@ const VideoDetail = () => {
                     justifyContent: {xs: 'center', md: 'start'}
                 }}
             >
-                <Box width={'75%'}>
+                <Box width={{xs: '100%', md: '75%'}}>
                     <ReactPlayer 
                         src={`https://www.youtube.com/watch?v=${id}`} 
                         className='react-player'
@@ -69,8 +80,24 @@ const VideoDetail = () => {
                         {videoDetail?.snippet?.title}
                     </Typography>
                     <Typography variant='subtitle2' p={2} sx={{opacity: '0.7'}}>
-                        {renderHTML(videoDetail?.snippet?.description)}
+                        {renderHTML(showMoreDiscription ? description : shortDescription)}
+                        {
+                            description.length > 200 && (
+                                <span
+                                    style={{
+                                        cursor: 'pointer',
+                                        color: colors.secondary,
+                                        fontWeight: 'bold',
+                                        paddingLeft: '5px'
+                                    }}
+                                    onClick={descriptionHandler}
+                                >
+                                    {showMoreDiscription ? 'Less' : 'More'}
+                                </span>
+                            )
+                        }
                     </Typography>
+                    
                     <Stack
                         direction={'row'}
                         gap={'20px'}
@@ -124,7 +151,17 @@ const VideoDetail = () => {
                         </Stack>
                     </Stack>
                 </Box>
-                <Box width={'25%'}>Suggested videos</Box>
+                <Box 
+                    width={{xs: '100%', md: '25%'}}
+                    px={2}
+                    py={{xs: 5, md: 0}}
+                    justifyContent={'center'}
+                    alignItems={'center'}
+                    overflow={'scroll'}
+                    maxHeight={'120vh'}
+                >
+                    <Videos videos={relatedVideo} direction={'column'} />
+                </Box>
             </Box>
         </Box> 
     );
